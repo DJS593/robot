@@ -24,8 +24,7 @@ console.log(enemyNames, enemyHealth, enemyAttack);
 
 var fight = function(enemyName) {
   
-  for(var i = 0; i < enemyNames.length; i++) {
-    fight(enemyNames[i]);
+  
     
   
   window.alert("The fight has begun!");
@@ -62,7 +61,10 @@ var fight = function(enemyName) {
     window.alert("please make another choice");
   }
   }
-}
 
+
+for(var i = 0; i < enemyNames.length; i++) {
+  fight(enemyNames[i]);
+}
 
 //fight();
