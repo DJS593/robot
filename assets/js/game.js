@@ -23,45 +23,40 @@ console.log(enemyNames, enemyHealth, enemyAttack);
 
 
 var fight = function(enemyName) {
-  while(enemyHealth > 0){
-
-  
-    
-  
-  window.alert("The fight has begun!");
+  while(enemyHealth > 0 && playerHealth > 0){  
+  // window.alert("The fight has begun!");
   var promptFight = window.prompt("Would you like to Fight or SKIP this battle? Enter 'FIGHT or 'SKIP to choose."); 
   
-  if(promptFight === "FIGHT" || promptFight === "fight") {
+  
+  if(promptFight === "SKIP" || promptFight === "skip") {
+    var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+    if(confirmSkip) {
+      window.alert(playerName + " has decided to skip this fight. Goodbye!");
+      playerMoney = playerMoney - 10;
+      console.log("playerMoney", playerMoney);
+      break;}
+    }
+  
   enemyHealth = enemyHealth - playerAttack;
-  console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining.");
-
+  console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."); 
 
   if(enemyHealth <= 0) {
-    window.alert(enemyName + " has died!");}
+    window.alert(enemyName + " has died!");
+    playerMoney = playerMoney + 20;
+    break;}
   else {
     window.alert(enemyName + " still has " + enemyHealth + " health left.");}
 
   playerHealth = playerHealth - enemyAttack;
   console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.");
   
-  
   if(playerHealth <= 0) {
-    window.alert(playerName + " has died!");}
+    window.alert(playerName + " has died!");
+    break;}
   else {
     window.alert(playerName + " still has " + playerHealth + " health left.");}
   }
-  else if(promptFight === "SKIP" || promptFight === "skip") {
-    var confirmSkip = window.confirm("Are you sure you'd like to quit?");
-    if(confirmSkip) {
-      window.alert(playerName + " has decided to skip this fight. Goodbye!");
-      playerMoney = playerMoney - 2;}
-    else {
-      fight();}
-  }
-  else {
-    window.alert("please make another choice");
-  }
-  }
+  
 }
 
 
