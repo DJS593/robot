@@ -23,7 +23,8 @@ console.log(enemyNames, enemyHealth, enemyAttack);
 
 
 var fight = function(enemyName) {
-  
+  while(enemyHealth > 0){
+
   
     
   
@@ -61,10 +62,14 @@ var fight = function(enemyName) {
     window.alert("please make another choice");
   }
   }
+}
 
 
 for(var i = 0; i < enemyNames.length; i++) {
-  fight(enemyNames[i]);
+  // debugger;
+  var pickedEnemyName = enemyNames[i];
+  enemyHealth = 50;
+  fight(pickedEnemyName);
 }
 
 //fight();
