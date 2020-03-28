@@ -1,3 +1,2 @@
 # robot
 
-DS_Store
