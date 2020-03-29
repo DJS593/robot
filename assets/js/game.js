@@ -71,6 +71,15 @@ var startGame = function() {
     var pickedEnemyName = enemyNames[i];
     enemyHealth = 50;
     fight(pickedEnemyName);}
+    
+    /* if(playerHealth > 0 && i < enemyNames.lenght - 1) {
+      var storeConfirm = window.confirm("The fight is over, visit the store before the next round?");
+      if(storeConfirm) {
+        shop();
+      }  
+    } */
+  
+
     else {
     window.alert("You have lost your robot in battle! Game Over!");
     break;}
@@ -96,5 +105,10 @@ var playAgainConfirm = window.confirm("Would you like to play again?");
   }
 }
 
+var shop = function(){
+  console.log("entered the shop");
+}
+
 startGame();
+
 //fight();
