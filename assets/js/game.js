@@ -59,14 +59,8 @@ var fight = function(enemy) {
       break;}
     }
   
-<<<<<<< HEAD
-  var damage = randomNumber(playerAttack - 3, playerAttack);
-  enemyHealth = Math.max(0, enemyHealth - damage);
-  console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."); 
-=======
   enemy.health = Math.max(0, enemy.health - playerInfo.attack);
   console.log(playerInfo.name + " attacked " + enemy.name + ". " + enemy.name + " now has " + enemy.health + " health remaining."); 
->>>>>>> feature/objects
 
   if(enemy.health <= 0) {
     window.alert(enemy.name + " has died!");
@@ -75,15 +69,8 @@ var fight = function(enemy) {
   else {
     window.alert(enemy.name + " still has " + enemy.health + " health left.");}
 
-<<<<<<< HEAD
-  var damage = randomNumber(enemyAttack - 3, enemyAttack);
-  playerHealth = Math.max(0, playerHealth - damage);
-    //playerHealth = Math.max(0, playerHealth - enemyAttack);
-  console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.");
-=======
   playerInfo.health = Math.max(0, playerInfo.health - enemy.attack);
   console.log(enemy.name + " attacked " + playerInfo.name + ". " + playerInfo.name + " now has " + playerInfo.health + " health remaining.");
->>>>>>> feature/objects
   
   if(playerInfo.health <= 0) {
     window.alert(playerInfo.name + " has died!");
